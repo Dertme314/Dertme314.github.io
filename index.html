@@ -492,8 +492,9 @@
         /* -------------------------
            WEAO integration: normalize & merge
         ------------------------- */
-        const WEAO_ALL_URL = 'https://weao.xyz/api/status/exploits';
-        const WEAO_SINGLE_URL = (title) => `https://weao.xyz/api/status/exploits/${encodeURIComponent(title)}`;
+        const WEAO_ALL_URL = 'http://localhost:3000/api/status/exploits';
+        const WEAO_SINGLE_URL = (title) => `http://localhost:3000/api/status/exploits/${encodeURIComponent(title)}`;
+
 
         function normalizeWeao(ex) {
             return {
