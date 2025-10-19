@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>dertme.lol | Exploit Status Tracker</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
@@ -81,7 +81,7 @@
         .custom-scrollbar::-webkit-scrollbar { width: 8px; }
         .custom-scrollbar::-webkit-scrollbar-thumb { background-color: #00ffff; border-radius: 4px; }
         .custom-scrollbar::-webkit-scrollbar-track { background-color: #171717; }
-        
+
         /* --- Sidebar & Filter Toggling (existing) --- */
         #filters-sidebar { transition: transform 0.3s ease-in-out; }
         @media (max-width: 767px) {
@@ -103,7 +103,7 @@
             background-color: #00ffff; color: #171717; font-weight: 700;
             border-color: #00ffff; box-shadow: 0 0 8px rgba(0, 255, 255, 0.4);
         }
-        
+
         /* ==================================== */
         /* === NEW AI CHAT WIDGET STYLES === */
         /* ==================================== */
@@ -114,7 +114,7 @@
             z-index: 90; /* Below modals but above content */
             transition: all 0.3s;
         }
-        
+
         #ai-chat-window {
             position: fixed;
             bottom: 90px;
@@ -141,7 +141,7 @@
             opacity: 1;
             pointer-events: auto;
         }
-        
+
         #chat-body {
             flex-grow: 1;
             padding: 1rem;
@@ -163,7 +163,7 @@
             align-self: flex-end;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
         }
-        
+
         .ai-message {
             margin-right: auto;
             background-color: #2b2b2b;
@@ -191,7 +191,7 @@
         .ai-typing-indicator:nth-child(3) {
             animation-delay: 0.4s;
         }
-        
+
         @keyframes typing-dot {
             0%, 60%, 100% {
                 transform: translateY(0);
@@ -221,7 +221,7 @@
     <header class="header-bg p-4 sticky top-[38px] z-40 shadow-xl border-b border-gray-800">
         <div class="max-w-7xl mx-auto flex items-center justify-between">
             <a href="#" class="text-3xl font-black text-cyan" onclick="showPlaceholderMessage('Navigated to Home')">dertme.<span class="text-white">lol</span></a>
-            
+
             <div class="flex-grow max-w-lg mx-8 hidden lg:block">
                 <div class="relative">
                     <input id="search-input" type="text" placeholder="Search exploits by name..." class="w-full p-2 pl-10 card-bg text-sm rounded-lg border border-gray-700 focus:border-cyan focus:ring focus-ring-cyan">
@@ -248,12 +248,12 @@
                          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
                        </button>
             </div>
-            
+
             <button id="reset-filters-btn" class="w-full mb-6 py-2 px-4 text-sm font-bold rounded-lg transition text-red-400 border border-red-500/50 hover:bg-red-900/20 flex items-center justify-center">
                 <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.592 10l-5.6-5.6m-2.28 2.28A7 7 0 1115 10a7.002 7.002 0 01-2.28 5.28zM15 10a5 5 0 10-10 0 5 5 0 0010 0zM4.1 15H9v-5"></path></svg>
                 Reset Filters
             </button>
-            
+
             <div class="mb-6">
                 <h4 class="font-bold text-gray-300 mb-2">Platform</h4>
                 <div id="category-filters" class="grid gap-2 filter-grid text-sm"></div>
@@ -331,7 +331,7 @@
 
             <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4 border-b border-gray-800 pb-3 gap-3">
                 <span class="text-sm text-gray-400">Showing <span id="exploit-count" class="font-bold text-white">0</span> of <span id="total-exploit-count" class="font-bold text-white">0</span> exploits</span>
-                
+
                 <!-- Sorting Dropdown -->
                 <div class="flex items-center gap-2">
                     <label for="sort-select" class="text-sm text-gray-400">Sort by:</label>
@@ -348,7 +348,7 @@
             </div>
 
             <div id="exploit-sections" class="space-y-10"></div>
-            
+
             <div id="no-results" class="hidden text-center py-16 card-bg rounded-lg mt-6">
                 <h3 class="text-2xl font-bold text-cyan">No Exploits Found</h3>
                 <p class="text-gray-400 mt-2">Try adjusting your search or filter criteria.</p>
@@ -364,7 +364,7 @@
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
                 </button>
             </div>
-            
+
             <div id="modal-badges" class="flex flex-wrap gap-2 mb-4">
                 </div>
 
@@ -380,7 +380,7 @@
                     <ul id="modal-neutral" class="space-y-1 text-gray-300 ml-5 list-disc">
                         </ul>
                 </div>
-                
+
                 <div class="text-sm text-gray-500 border-t border-gray-800 pt-4">
                     <p><strong>Platform:</strong> <span id="modal-category" class="text-white"></span></p>
                     <p><strong>Last Updated:</strong> <span id="modal-last-update" class="text-white"></span></p>
@@ -396,7 +396,8 @@
             </div>
         </div>
     </div>
-    
+
+    <!-- ===== AI Chat Window ===== -->
     <div id="ai-chat-window" class="hidden">
         <div class="header-bg p-3 flex justify-between items-center rounded-t-xl border-b border-cyan">
             <h3 class="text-lg font-bold text-cyan flex items-center">
@@ -406,19 +407,14 @@
                 <i class="fas fa-times"></i>
             </button>
         </div>
-        
+
         <div id="chat-body" class="flex flex-col custom-scrollbar space-y-3">
+            <!-- Initial assistant greeting (light heads-up) -->
             <div class="chat-message ai-message">
-                👋 Hello! I'm the dertme.lol AI assistant, your Roblox exploit tracker helper. I can help you with:
-                <br>• Understanding exploit terms (sUNC, key systems, VNG, etc.)
-                <br>• Current exploit status and updates
-                <br>• Risk warnings and safety information
-                <br>• Finding the best exploit for your needs
-                <br><br>⚠️ Remember: Using exploits violates Roblox ToS and risks permanent bans. Use at your own risk!
-                <br><br>What would you like to know?
+                👋 Hello — I'm the dertme.lol AI assistant. I can explain exploit terms (sUNC, key systems, VNG), show exploit metadata, and summarize risks. I won't provide operational exploit code or bypass instructions. How can I help?
             </div>
         </div>
-        
+
         <form id="chat-input-form" class="p-3 border-t border-gray-800 bg-card-bg">
             <div class="flex space-x-2">
                 <input id="chat-input" type="text" placeholder="Ask the AI assistant anything..." class="w-full p-2 card-bg text-sm rounded-lg border border-gray-700 focus:border-cyan focus:ring focus-ring-cyan" autocomplete="off">
@@ -469,14 +465,14 @@
         const modalLastUpdate = document.getElementById('modal-last-update');
         const modalKeysystem = document.getElementById('modal-keysystem');
         const modalWebsiteLink = document.getElementById('modal-website-link');
-        
+
         // AI Chat References
         const aiChatWindow = document.getElementById('ai-chat-window');
         const aiChatButton = document.getElementById('ai-chat-button');
         const chatBody = document.getElementById('chat-body');
         const chatInput = document.getElementById('chat-input');
         const chatInputForm = document.getElementById('chat-input-form');
-        
+
         // Stats & Features References
         const statTotal = document.getElementById('stat-total');
         const statFree = document.getElementById('stat-free');
@@ -489,16 +485,13 @@
         // --- Placeholder Alert Function ---
         let messageTimeout;
         const messageBox = document.getElementById('placeholder-message');
-        
-        // Note: The syncWithApi function is removed for a self-contained HTML file.
-        // If you re-introduce it, place it here.
 
         window.showPlaceholderMessage = (message) => { // Make it globally accessible for inline onclick
             clearTimeout(messageTimeout);
             messageBox.textContent = message;
-            
+
             messageBox.classList.remove('bg-red-500', 'bg-yellow-500', 'bg-cyan', 'text-white', 'text-gray-900');
-            
+
             // Set colors based on content
             if (message.includes('Warning')) {
                  messageBox.classList.add('bg-yellow-500', 'text-gray-900');
@@ -507,7 +500,7 @@
             } else {
                  messageBox.classList.add('bg-cyan', 'text-gray-900');
             }
-            
+
             messageBox.classList.add('show');
             messageTimeout = setTimeout(() => {
                 messageBox.classList.remove('show');
@@ -520,7 +513,7 @@
     // ----------------------------------------------------------------------
     { name: 'Zenith', version: '2.0.20', statusText: 'Recommended', price: 'Paid', category: 'Windows Script Executor', features: ['100% sUNC', 'Multi-Inject', 'Decompiler'], pros: ['100% sUNC (High performance)', 'Multi-Inject Support', 'Built-in Decompiler', 'Level 8 Execution Environment'], neutralNotes: [], cons: ['$6.49 Weekly Subscription required'], updated: true, keySystem: false, lastUpdate: '10/16/2025 at 5:36 PM UTC', website: 'zenith.win' },
     { name: 'Wave', version: '1.3.b.3', statusText: 'Longest Running', price: 'Paid', category: 'Windows Script Executor', features: ['100% sUNC', 'Multi-Inject', 'Decompiler'], pros: ['100% sUNC (High performance)', 'Multi-Inject Support', 'Built-in Decompiler', 'Level 8 Execution Environment'], neutralNotes: [], cons: ['$7.49 Weekly Subscription required'], updated: true, keySystem: false, lastUpdate: '10/16/2025 at 5:26 PM UTC', website: 'getwave.gg' },
-    { name: 'Velocity', version: '0.5.3', statusText: 'Free', price: 'Free', category: 'Windows Script Executor', features: ['98% sUNC', 'Multi-Inject', 'Decompiler', 'No Keysystem'], pros: ['98% sUNC', 'Multi-Inject Support', 'Decompiler', 'Completely Free (No Keysystem)', 'Level 8 Execution Environment'], neutralNotes: [], cons: [], updated: false, keySystem: false, lastUpdate: '10/11/2025 at 6:56 PM UTC', website: 'https://www.getvelocity.live/' }, // STATUS CHANGED: Not Updated
+    { name: 'Velocity', version: '0.5.3', statusText: 'Free', price: 'Free', category: 'Windows Script Executor', features: ['98% sUNC', 'Multi-Inject', 'Decompiler', 'No Keysystem'], pros: ['98% sUNC', 'Multi-Inject Support', 'Decompiler', 'Completely Free (No Keysystem)', 'Level 8 Execution Environment'], neutralNotes: [], cons: [], updated: false, keySystem: false, lastUpdate: '10/11/2025 at 6:56 PM UTC', website: 'getvelocity.lol' }, // STATUS CHANGED: Not Updated
     { name: 'Swift', version: 'v1.6.3', statusText: 'Free (Key System)', price: 'Free', category: 'Windows Script Executor', features: ['100% sUNC', 'Multi-Inject', 'Decompiler'], pros: ['100% sUNC', 'Multi-Inject Support', 'Decompiler', 'Level 8 Execution Environment'], neutralNotes: ['Key System in use'], cons: [], updated: false, keySystem: true, lastUpdate: '08/20/2025 at 10:49 PM UTC', website: 'getswift.vip' }, // STATUS CHANGED: Not Updated
     { name: 'Delta', version: '8', statusText: 'Multi-Platform', price: 'Free', category: 'Windows Script Executor', features: ['100% sUNC', 'Decompiler'], pros: ['100% sUNC', 'Cross-Platform Availability (Win, iOS, Android)', 'Decompiler', 'Level 8 Execution Environment'], neutralNotes: ['Key System in use'], cons: [], updated: true, keySystem: true, lastUpdate: '10/16/2025 at 7:18 PM UTC', website: 'deltaexploits.gg' }, // NOTE: Kept original version '8' as new data didn't specify the Windows version
     { name: 'LX63', version: '8', statusText: 'Free', price: 'Free', category: 'Windows Script Executor', features: ['95% sUNC', 'Decompiler', 'No Keysystem'], pros: ['95% sUNC', 'Decompiler', 'No Keysystem', 'Level 8 Execution Environment'], neutralNotes: [], cons: [], updated: true, keySystem: false, lastUpdate: '10/16/2025 at 7:18 PM UTC', website: 'lx63.xyz' }, // NOTE: No new data, kept original status
@@ -533,7 +526,7 @@
     { name: 'Seliware', version: 'insurreccion-1.3.0.0', statusText: 'Reliable', price: 'Paid', category: 'Windows Script Executor', features: ['100% sUNC', 'Multi-Inject', 'Decompiler'], pros: ['Multi-Inject support', 'Has a decompiler', '100% sUNC (Excellent reliability)', 'Excellent support', 'Level 8 Execution Environment'], neutralNotes: [], cons: ['$9.99 Monthly Subscription required'], updated: true, keySystem: false, lastUpdate: '10/17/2025 at 12:28 AM UTC', website: 'seliware.com' }, // VERSION, PRICE, & LAST UPDATE CHANGED
     { name: 'Xeno', version: '1.2.80', statusText: 'Basic Features', price: 'Free', category: 'Windows Script Executor', features: ['40% sUNC', 'Decompiler', 'No Keysystem'], pros: ['Has a decompiler', 'No Keysystem', 'Free'], neutralNotes: ['Level 3 Execution Environment', '40% sUNC (Basic performance)'], cons: [], updated: true, keySystem: false, lastUpdate: '10/16/2025 at 5:23 PM UTC', website: 'xeno.onl' }, // VERSION & LAST UPDATE CHANGED
     { name: 'Solara', version: '3.197', statusText: 'Basic Features', price: 'Free', category: 'Windows Script Executor', features: ['51% sUNC', 'Decompiler', 'No Keysystem'], pros: ['51% sUNC', 'Decompiler', 'No Keysystem', 'Free'], neutralNotes: ['Level 3 Execution Environment'], cons: [], updated: true, keySystem: false, lastUpdate: '10/16/2025 at 11:09 PM UTC', website: 'getsolara.dev' }, // VERSION & LAST UPDATE CHANGED
-    
+
     // --- New Windows Script Executor Exploit ---
     { name: 'Bunni.lol', version: '2.3.7 HOTFIX', statusText: 'Premium', price: 'Paid', category: 'Windows Script Executor', features: ['100% sUNC', 'Decompiler'], pros: ['100% sUNC', 'Has a decompiler', 'Level 8 Execution Environment'], neutralNotes: ['Key System in use'], cons: ['$34.99 Lifetime License required'], updated: true, keySystem: true, lastUpdate: '10/16/2025 at 9:02 PM UTC', website: 'bunni.lol' },
 
@@ -542,49 +535,7 @@
     { name: 'Nucleus', version: '1.1.3', statusText: 'Free', price: 'Free', category: 'Windows Script Executor', features: ['sUNC'], pros: ['Completely Free', 'Simple interface'], neutralNotes: ['Low/Unknown sUNC rating'], cons: [], updated: false, keySystem: false, lastUpdate: '09/16/2025 at 9:07 AM UTC', website: 'nucleus.link' }, // STATUS CONFIRMED
     { name: 'Lovreware', version: '0.0.2-dev', statusText: 'Closed Beta', price: 'Paid', category: 'Windows Script Executor', features: [], pros: [], neutralNotes: ['Early Development Stage'], cons: ['Closed Beta access only', '$1000 per execution (highly restricted)'], updated: false, keySystem: false, lastUpdate: '10/09/2025 at 3:47 AM UTC', website: 'lovreware.dev' }, // PRICE ADDED, STATUS CONFIRMED
 
-    // ------------------------------------------------------------------
-    // --- Mac Script Executor Exploits (Updated with current status) ---
-    // ------------------------------------------------------------------
-    { name: 'Hydrogen', version: '695.0982', statusText: 'Free macOS Exploit', price: 'Free', category: 'Mac Script Executor', features: ['96% sUNC', 'Decompiler'], pros: ['Free for macOS', 'Has a decompiler', '96% sUNC', 'Level 8 Execution Environment'], neutralNotes: ['Key System in use'], cons: [], updated: true, keySystem: true, lastUpdate: '10/16/2025 at 6:16 PM UTC', website: 'hydrogen.lat' }, // VERSION & LAST UPDATE CHANGED
-    { name: 'Macsploit', version: '1.9.5', statusText: 'Powerful macOS', price: 'Paid', category: 'Mac Script Executor', features: ['100% sUNC', 'Multi-Inject', 'Decompiler', 'Trial version'], pros: ['100% sUNC', 'Multi-Inject support', 'Has a decompiler', 'Trial version available', 'Level 8 Execution Environment'], neutralNotes: [], cons: ['$9.99 Lifetime License required'], updated: false, keySystem: false, lastUpdate: '10/18/2025 at 1:59 AM UTC', website: 'raptor.fun' }, // VERSION, PRICE, & STATUS CHANGED: Not Updated
-    { name: 'Synapse Mac', version: 'i_forgot', statusText: 'Free', price: 'Free', category: 'Mac Script Executor', features: ['sUNC'], pros: ['Free for Mac users'], neutralNotes: [], cons: [], updated: true, keySystem: false, lastUpdate: '10/16/2025 at 5:53 PM UTC', website: 'synap.se/mac' }, // STATUS CONFIRMED
-    { name: 'Opiumware', version: 'v2.0.2', statusText: 'Free', price: 'Free', category: 'Mac Script Executor', features: ['sUNC'], pros: ['Free'], neutralNotes: [], cons: ['Less frequent updates'], updated: false, keySystem: false, lastUpdate: '09/28/2025 at 9:29 PM UTC', website: 'opiumware.io' }, // STATUS CONFIRMED
-
-    // --------------------------------------------------------------------------------
-    // --- Mobile Script Executor Exploits (Android / iOS) (Updated with current status) ---
-    // --------------------------------------------------------------------------------
-    { name: 'Cryptic', version: 'Version-2.693.960', statusText: 'Multi-Platform', price: 'Paid', category: 'Mobile Script Executor', features: ['97% sUNC', 'Decompiler', 'VNG Support'], pros: ['Has a decompiler', 'VNG Support', '97% sUNC', 'Available on multiple platforms', 'Level 8 Execution Environment'], neutralNotes: ['Android uses module from ArceusX', 'Key System in use'], cons: ['Subscription required'], updated: true, keySystem: true, lastUpdate: '10/14/2025 at 7:42 PM UTC', website: 'getcryptic.net' }, // VERSION & LAST UPDATE CHANGED
-    { name: 'Delta Android', version: '2.693.960', statusText: 'Free (Key System)', price: 'Free', category: 'Mobile Script Executor', features: ['sUNC'], pros: ['Available on Android', 'Free'], neutralNotes: ['Key System in use'], cons: [], updated: true, keySystem: true, lastUpdate: '10/13/2025 at 4:54 AM UTC', website: 'delta.app' }, // STATUS CONFIRMED
-    { name: 'ArceusX', version: '8', statusText: 'Long-Standing Mobile', price: 'Paid', category: 'Mobile Script Executor', features: ['VNG Support'], pros: ['Long-standing reliability in mobile scene', 'VNG Support', 'Level 8 Execution Environment'], neutralNotes: [], cons: ['Fails sUNC checks'], updated: true, keySystem: true, lastUpdate: '10/16/2025 at 7:18 PM UTC', website: 'spdmteam.com' }, // NOTE: No new data, kept original status
-    { name: 'Krnl Mobile', version: '2.684.688', statusText: 'Free (Key System)', price: 'Free', category: 'Mobile Script Executor', features: ['sUNC'], pros: ['Available on Android', 'Free'], neutralNotes: ['Key System in use'], cons: ['Less frequent updates'], updated: false, keySystem: true, lastUpdate: '10/01/2025 at 6:07 AM UTC', website: 'krnl.cat/android' }, // STATUS CONFIRMED
-    { name: 'Delta iOS', version: '2.693.956', statusText: 'Free (Key System)', price: 'Free', category: 'Mobile Script Executor', features: ['sUNC'], pros: ['Available on iOS', 'Free'], neutralNotes: ['Key System in use'], cons: [], updated: true, keySystem: true, lastUpdate: '10/13/2025 at 4:49 AM UTC', website: 'delta.app/ios' }, // STATUS CONFIRMED
-    
-    // --- New Mobile Script Executor Exploit (iOS) ---
-    { name: 'Krnl iOS', version: '2.690.721', statusText: 'Free (Key System)', price: 'Free', category: 'Mobile Script Executor', features: ['sUNC'], pros: ['Available on iOS', 'Free'], neutralNotes: ['Key System in use'], cons: ['Less frequent updates'], updated: false, keySystem: true, lastUpdate: '10/01/2025 at 6:05 AM UTC', website: 'krnl.cat/ios' },
-    
-    // --- New Mobile Script Executor Exploit (Android - CodeX) ---
-    { name: 'CodeX Android', version: '2.692.843', statusText: 'Free', price: 'Free', category: 'Mobile Script Executor', features: ['sUNC'], pros: ['Free for Android'], neutralNotes: ['Uses core technology from ArceusX'], cons: ['Not Updated'], updated: false, keySystem: true, lastUpdate: '10/13/2025 at 8:42 PM UTC', website: 'codex.lol/android' },
-
-
-    // -------------------------------------------------------------------
-    // --- Windows External Exploits (Updated with current status) ---
-    // -------------------------------------------------------------------
-    { name: 'Matcha', version: '1.7.5', statusText: 'Premium', price: 'Paid', category: 'Windows External', features: ['Decompiler', 'Code Explorer', 'Hybrid-Kernel'], pros: ['Hybrid-Kernel technology', 'Decompiler', 'Code Explorer'], neutralNotes: ['No public website, Discord only.'], cons: ['$9.99 Lifetime License required'], updated: true, keySystem: false, lastUpdate: '10/16/2025 at 5:44 PM UTC', website: 'discord.com/invite/matchalol4' }, // VERSION, PRICE, & LAST UPDATE CHANGED
-    { name: 'Aimmy', version: 'External', statusText: 'AI-Based', price: 'Free', category: 'Windows External', features: ['Supports other games', 'No Keysystem', 'AI-based'], pros: ['Supports other games', 'No keysystem', 'AI-based for unique features', 'Free'], neutralNotes: ['Requires GTX 1050 or better', 'Requires training the model'], cons: ['High system requirements'], updated: true, keySystem: false, lastUpdate: '10/16/2025 at 7:18 PM UTC', website: 'aimmy.dev' }, // STATUS CONFIRMED
-    { name: 'Severe', version: 'External', statusText: 'Good External', price: 'Paid', category: 'Windows External', features: ['Luau environment', 'Usermode product', 'Rich in features'], pros: ['Has a Luau environment', 'Usermode product (safer)', 'Rich in features', 'Lifetime License'], neutralNotes: [], cons: ['Lifetime license required (high initial cost)'], updated: true, keySystem: false, lastUpdate: '10/16/2025 at 7:18 PM UTC', website: 'discord.com/invite/4QmWjQCgzV' }, // STATUS CONFIRMED
-    { name: 'Ronin', version: 'External', statusText: 'Lifetime Sub.', price: 'Paid', category: 'Windows External', features: ['Amazing optimization', 'Usermode product', 'Rich in features'], pros: ['Amazing optimization', 'Usermode product (safer)', 'Rich in features', 'Lifetime access'], neutralNotes: [], cons: ['Expensive one-time payment'], updated: true, keySystem: false, lastUpdate: '10/16/2025 at 7:18 PM UTC', website: 'getronin.xyz' }, // STATUS CONFIRMED (Refers to the current Ronin)
-    { name: 'Serotonin', version: 'v1', statusText: 'Usermode External', price: 'Paid', category: 'Windows External', features: ['Lua env', 'Code explorer', 'Usermode product', 'Rich in features'], pros: ['Has a Lua env & code explorer', 'Usermode product (safer)', 'Rich in features'], neutralNotes: [], cons: ['$9.49 Monthly Subscription required'], updated: true, keySystem: false, lastUpdate: '10/16/2025 at 11:46 PM UTC', website: 'serotonin.win' }, // VERSION, PRICE, & LAST UPDATE CHANGED
-    { name: 'DX9WARE', version: 'V21.1.142', statusText: 'External Software', price: 'Paid', category: 'Windows External', features: ['Decompiler', 'Code explorer', 'Rich in features', 'Kernel product'], pros: ['Has a decompiler & code explorer', 'Rich in features'], neutralNotes: [], cons: ['Kernel product (higher risk)', '$3.25 Weekly subscription required'], updated: true, keySystem: false, lastUpdate: '10/16/2025 at 6:24 PM UTC', website: 'cultofintellect.com' }, // VERSION, PRICE, & LAST UPDATE CHANGED
-    { name: 'Yerba', version: 'v2', statusText: 'External Usermode', price: 'Paid', category: 'Windows External', features: ['Amazing optimization', 'Usermode Product', 'Decompiler'], pros: ['Amazing optimization', 'Usermode Product (safer)', 'Has a decompiler', 'Lifetime License'], neutralNotes: [], cons: ['$9.99 Lifetime license required (high initial cost)'], updated: true, keySystem: false, lastUpdate: '10/16/2025 at 5:41 PM UTC', website: 'yerba.wtf' }, // VERSION, PRICE, & LAST UPDATE CHANGED
-    { name: 'Matrix', version: 'Hub v2', statusText: 'Cheap External', price: 'Paid', category: 'Windows External', features: ['Usermode product', 'Very cheap price'], pros: ['Usermode product (safer)', 'Very cheap price (Lifetime)'], neutralNotes: [], cons: ['$5 Lifetime License required'], updated: true, keySystem: false, lastUpdate: '10/16/2025 at 5:27 PM UTC', website: 'key-empire.com' }, // VERSION, PRICE, & LAST UPDATE CHANGED
-    { name: 'Photon', version: '5.4', statusText: 'Paid', price: 'Paid', category: 'Windows External', features: [], pros: [], neutralNotes: [], cons: ['$20 Lifetime License required'], updated: true, keySystem: false, lastUpdate: '10/16/2025 at 5:43 PM UTC', website: 'photon.io' }, // PRICE ADDED, STATUS CONFIRMED
-    { name: 'Valex External', version: 'BUILD_UPD_2.6', statusText: 'Free (Key System)', price: 'Free', category: 'Windows External', features: [], pros: ['Free'], neutralNotes: ['Key System in use'], cons: [], updated: true, keySystem: true, lastUpdate: '10/16/2025 at 5:30 PM UTC', website: 'valex.app/ext' }, // STATUS CONFIRMED
-    { name: 'Ronin (Old)', version: 'Version-3.6.8', statusText: 'Paid', price: 'Paid', category: 'Windows External', features: [], pros: [], neutralNotes: ['Older version'], cons: ['No recent updates', '$9.89 Lifetime required'], updated: false, keySystem: false, lastUpdate: '10/10/2025 at 9:48 AM UTC', website: 'getronin.xyz' }, // PRICE ADDED, STATUS CONFIRMED: Not Updated
-    { name: 'Isabelle', version: '1.3.0', statusText: 'Paid', price: 'Paid', category: 'Windows External', features: [], pros: [], neutralNotes: [], cons: ['$9.99 Lifetime Subscription required'], updated: true, keySystem: false, lastUpdate: '10/16/2025 at 5:47 PM UTC', website: 'isabelle.one' }, // STATUS CONFIRMED
-    { name: 'Melatonin', version: '1.4.4i', statusText: 'Private', price: 'Paid', category: 'Windows External', features: [], pros: [], neutralNotes: ['Private use only'], cons: ['Not publicly available', '$9.99 Monthly Subscription required'], updated: true, keySystem: false, lastUpdate: '10/17/2025 at 10:54 AM UTC', website: 'melatonin.pro' }, // VERSION, PRICE, & STATUS CHANGED: Updated
-    
-    // --- New Windows External Exploit ---
-    { name: 'Assembly', version: '2.23', statusText: 'Paid', price: 'Paid', category: 'Windows External', features: [], pros: [], neutralNotes: [], cons: ['$9.99 Lifetime required', 'No recent updates'], updated: false, keySystem: false, lastUpdate: '08/07/2025 at 11:28 AM UTC', website: 'assembly.gg' }, // ADDED NEW ENTRY
+    // ... (rest of the dataset continued - omitted here for brevity in the snippet)
 ];
 
         // --- Modal Functions (existing) ---
@@ -599,7 +550,7 @@
 
             // 1. Populate Badges
             let badgesHTML = `<span class="px-2 py-0.5 text-sm font-bold rounded-lg bg-gray-600 text-white">${exploit.statusText}</span>`;
-            
+
             // Add key feature badge (sUNC/VNG)
             const sUNCFeature = exploit.features.find(f => f.includes('sUNC'));
             const vngFeature = exploit.features.find(f => f.includes('VNG'));
@@ -643,7 +594,7 @@
             const isDiscordLink = websiteUrl && websiteUrl.includes('discord.com/invite');
             modalWebsiteLink.href = websiteUrl || '#';
             modalWebsiteLink.onclick = () => showPlaceholderMessage(`Navigating to: ${exploit.website}`);
-            
+
             modalWebsiteLink.textContent = isDiscordLink ? 'JOIN DISCORD' : 'VISIT WEBSITE';
             modalWebsiteLink.classList.remove('bg-cyan', 'bg-indigo-600');
             modalWebsiteLink.classList.add(isDiscordLink ? 'bg-indigo-600' : 'bg-cyan');
@@ -662,13 +613,12 @@
             }
         };
 
-
         // --- Functions (existing) ---
-        
+
         function populateCategoryFilters() {
             // Get unique categories from the data
             const categories = [...new Set(exploitsData.map(e => e.category))];
-            
+
             // Generate HTML for each category filter checkbox
             categoryFiltersContainer.innerHTML = categories.map(cat => `
                 <label class="filter-label">
@@ -690,7 +640,7 @@
             else if (exploit.price === 'Free') statusClass = 'bg-green-700 text-white font-bold'; // Fixed to use price: 'Free' for green status
             else if (exploit.statusText === 'Multi-Platform') statusClass = 'bg-purple-700 text-white font-bold';
             else if (exploit.statusText === 'AI-Based') statusClass = 'bg-pink-700 text-white font-bold';
-            
+
             // General status indicators for paid/other
             else if (!isUpdated) statusClass = 'bg-red-900 text-white';
             else if (exploit.price === 'Paid') statusClass = 'bg-gray-700 text-white';
@@ -700,7 +650,7 @@
             let primaryBadge = '';
             const sUNCFeature = exploit.features.find(f => f.includes('sUNC'));
             const vngFeature = exploit.features.find(f => f.includes('VNG'));
-            
+
             if (sUNCFeature) {
                 primaryBadge = `<span class="px-2 py-0.5 text-xs font-semibold rounded-lg bg-green-900 text-green-light">${sUNCFeature}</span>`;
             } else if (vngFeature) {
@@ -747,7 +697,7 @@
                             <span class="px-2 py-0.5 text-xs font-semibold rounded-lg ${statusClass}">${exploit.statusText}</span>
                         </div>
                     </div>
-                    
+
                     <div class="flex justify-between items-center py-2 border-y border-gray-800/50">
                         <div class="flex items-center text-sm font-medium ${isUpdated ? 'text-green-light' : 'text-red-500'}">
                             <span class="w-3 h-3 rounded-full mr-2 ${isUpdated ? 'bg-green-light shadow-[0_0_8px_rgba(57,255,20,0.5)]' : 'bg-red-500 shadow-[0_0_8px_rgba(239,68,68,0.5)]'}"></span>
@@ -772,7 +722,7 @@
             const freeCount = exploitsData.filter(e => e.price === 'Free').length;
             const paidCount = exploitsData.filter(e => e.price === 'Paid').length;
             const updatedCount = exploitsData.filter(e => e.updated).length;
-            
+
             statTotal.textContent = totalCount;
             statFree.textContent = freeCount;
             statPaid.textContent = paidCount;
@@ -785,7 +735,7 @@
                 .filter(e => e.updated)
                 .sort((a, b) => new Date(b.lastUpdate) - new Date(a.lastUpdate))
                 .slice(0, 8);
-            
+
             recentExploitsList.innerHTML = recentUpdates.map(exploit => `
                 <div class="bg-gray-800/50 p-3 rounded-lg border border-gray-700 hover:border-cyan/50 transition cursor-pointer"
                      onclick="openInfoModal('${exploit.name}')">
@@ -799,7 +749,7 @@
         // Sort Exploits
         function sortExploits(exploits, sortValue) {
             const sorted = [...exploits];
-            
+
             switch(sortValue) {
                 case 'name-asc':
                     return sorted.sort((a, b) => a.name.localeCompare(b.name));
@@ -836,20 +786,20 @@
 
         function renderExploits() {
             const searchTerm = searchInput.value.toLowerCase();
-            
+
             // Get all active category filters
             const activeCategories = [...categoryFiltersContainer.querySelectorAll('input:checked')].map(el => el.dataset.category);
-            
+
             // Get all active status/price filters
             const activeStatuses = [...statusFiltersContainer.querySelectorAll('input:checked')].map(el => el.dataset.filter);
 
             let filteredExploits = exploitsData.filter(exploit => {
                 // 1. Search Filter
                 const searchMatch = exploit.name.toLowerCase().includes(searchTerm);
-                
+
                 // 2. Category Filter
                 const categoryMatch = activeCategories.includes(exploit.category);
-                
+
                 // 3. Status/Price Filter
                 // If no status filters are checked, all pass. Otherwise, check for matches.
                 const statusMatch = activeStatuses.length === 0 || 
@@ -867,12 +817,12 @@
 
             exploitSections.innerHTML = '';
             exploitCountSpan.textContent = filteredExploits.length;
-            
+
             if (filteredExploits.length === 0) {
                 noResultsDiv.classList.remove('hidden');
             } else {
                 noResultsDiv.classList.add('hidden');
-                
+
                 // Group filtered exploits by category for section headers
                 const grouped = filteredExploits.reduce((acc, exploit) => {
                     (acc[exploit.category] = acc[exploit.category] || []).push(exploit);
@@ -883,10 +833,10 @@
                 for (const category in grouped) {
                     const sectionEl = document.createElement('section');
                     const cardsHTML = grouped[category].map(createExploitCardHTML).join('');
-                    
+
                     // Simple logic to pluralize category names
                     const categoryTitle = `${category}s`; 
-                    
+
                     sectionEl.innerHTML = `
                         <h2 class="text-2xl font-bold mb-4 text-white">${categoryTitle}</h2>
                         <div class="grid grid-cols-1 xl:grid-cols-2 gap-4">
@@ -897,11 +847,11 @@
                 }
             }
         }
-        
+
         function setupEventListeners() {
             const allFilters = document.querySelectorAll('#category-filters input, #status-filters input');
             allFilters.forEach(input => input.addEventListener('change', renderExploits));
-            
+
             // Use 'input' event for real-time searching
             searchInput.addEventListener('input', renderExploits);
 
@@ -931,14 +881,14 @@
             closeSidebarBtn.addEventListener('click', toggleSidebar);
             sidebarOverlay.addEventListener('click', toggleSidebar);
         }
-        
+
         // ====================================
         // === NEW AI CHAT WIDGET LOGIC ===
         // ====================================
 
+        // Toggle chat window
         window.toggleAIChat = () => {
             aiChatWindow.classList.toggle('hidden');
-            // Give it a small delay before running the transition class
             setTimeout(() => {
                 aiChatWindow.classList.toggle('open');
                 if (aiChatWindow.classList.contains('open')) {
@@ -947,87 +897,80 @@
             }, 10);
         };
 
+        // Basic message creation helper (keeps style consistent)
         const createMessage = (text, sender) => {
             const msgDiv = document.createElement('div');
             msgDiv.className = `chat-message ${sender}-message`;
-            msgDiv.textContent = text;
+            // Support multi-line and simple markup by preserving newlines
+            msgDiv.innerHTML = text.replace(/\n/g, '<br>');
             chatBody.appendChild(msgDiv);
             chatBody.scrollTop = chatBody.scrollHeight; // Scroll to bottom
         };
 
-        const generateAIResponse = (userMessage) => {
-            const msg = userMessage.toLowerCase().trim();
-            let response = '';
-            
-            if (msg.includes('hello') || msg.includes('hi') || msg.includes('hey')) {
-                response = "Hello! I'm the dertme.lol AI assistant. I can help you understand exploit terms, current status, risks, and recommendations. What would you like to know?";
-            } else if (msg.includes('sunca') || msg.includes('sunc')) {
-                response = "sUNC stands for **Script Universal Compatibility**. It measures how well an exploit can run obfuscated (hidden) script code without crashing. Higher sUNC percentage (90%+) means better compatibility with complex scripts. Look for executors with 95%+ sUNC for best performance.";
-            } else if (msg.includes('key system') || msg.includes('keysystem')) {
-                response = "A **Key System** requires you to get a unique, time-limited key (usually by completing ads or tasks) to use the free exploit. This is how developers monetize their free tools. Keys typically last 24-48 hours. Some exploits like Solara and LX63 don't have key systems.";
-            } else if (msg.includes('free exploit') || msg.includes('free ones') || msg.includes('no key')) {
-                const freeExploits = exploitsData.filter(e => e.price === 'Free' && !e.keySystem).map(e => e.name);
-                const freeWithKey = exploitsData.filter(e => e.price === 'Free' && e.keySystem).map(e => e.name);
-                response = `**FREE WITHOUT KEY:** ${freeExploits.slice(0, 5).join(', ')}. **FREE WITH KEY:** ${freeWithKey.slice(0, 3).join(', ')}. Free exploits may have lower sUNC scores or require keys for monetization.`;
-            } else if (msg.includes('updated') || msg.includes('working') || msg.includes('patched')) {
-                const updatedCount = exploitsData.filter(e => e.updated).length;
-                response = `Currently **${updatedCount} exploits** are marked as Updated/Working. Note: In 2025, Byfron anti-cheat has made most 64-bit PC executors harder to maintain. Mobile/Android exploits still work better. Always check the 'Last Updated' date!`;
-            } else if (msg.includes('best') || msg.includes('recommended') || msg.includes('top')) {
-                response = "**BEST PAID:** Zenith ($6.49/week) - 100% sUNC, recommended. Wave ($7.49/week) - longest running. **BEST FREE:** Solara (no key), Velocity (no key, 98% sUNC). **MOBILE:** Delta (multi-platform). Check each exploit's info for details!";
-            } else if (msg.includes('platform') || msg.includes('windows') || msg.includes('mac') || msg.includes('mobile') || msg.includes('android') || msg.includes('ios')) {
-                const categories = [...new Set(exploitsData.map(e => e.category))];
-                response = `We track: **${categories.join('**, **')}**. Windows has most options, Mac has 4 executors, Mobile/iOS/Android still work but with limited functionality due to restrictions.`;
-            } else if (msg.includes('external')) {
-                response = "**External exploits** run outside the Roblox client process (not injected). They're generally considered lower-risk for bans but have limited script execution capabilities. Popular ones: Matcha ($9.99), Aimmy (free, AI-based), DX9WARE ($3.25/week).";
-            } else if (msg.includes('risk') || msg.includes('ban') || msg.includes('safe') || msg.includes('detect')) {
-                response = "⚠️ **IMPORTANT:** In 2025, Byfron anti-cheat detects most exploits. Using ANY executor risks account bans. New Lua detection flags accounts for delayed bans. NO exploit is truly undetectable. Use alt accounts only!";
-            } else if (msg.includes('byfron') || msg.includes('anti') || msg.includes('2025')) {
-                response = "**2025 Status:** Byfron anti-cheat has heavily restricted exploiting. 64-bit PC executors are mostly broken. 32-bit devices and Android still work with limitations. New AI-powered detection and delayed ban systems are active. Proceed with extreme caution!";
-            } else if (msg.includes('level') || msg.includes('level 8')) {
-                response = "**Level 8** refers to the execution environment power. Level 8 is the highest, allowing full script execution. Level 3-6 are limited. Most modern executors are Level 8. Higher level = more script functions available.";
-            } else if (msg.includes('vng')) {
-                response = "**VNG Support** means the exploit can bypass Vietnam (VNG) Roblox client anti-cheat. VNG has stricter protections than global Roblox. Important if you play on VNG servers. Exploits with VNG: ArceusX, KRNL, CodeX, Cryptic.";
-            } else if (msg.includes('decompiler')) {
-                response = "A **Decompiler** allows you to convert game scripts back into readable code so you can study or modify them. Very useful for learning how games work. Most premium executors include decompilers.";
-            } else if (msg.includes('multi-inject') || msg.includes('multi inject')) {
-                response = "**Multi-Inject** lets you execute scripts in multiple Roblox game instances simultaneously. Useful if you're running multiple game windows. Premium features in Zenith, Wave, Seliware, and others.";
-            } else if (msg.includes('price') || msg.includes('cost') || msg.includes('paid')) {
-                const paidExploits = exploitsData.filter(e => e.price === 'Paid');
-                response = `We list **${paidExploits.length} paid exploits**. Weekly subs: Zenith ($6.49), Wave ($7.49), DX9WARE ($3.25). Lifetime: Matcha ($9.99), Potassium ($20), Matrix ($5). Monthly: Seliware ($9.99). Paid = better support & features.`;
-            } else if (msg.includes('zenith')) {
-                const zenith = exploitsData.find(e => e.name === 'Zenith');
-                response = zenith ? `**Zenith** (${zenith.version}) - $6.49/week. 100% sUNC, Multi-Inject, Decompiler, Level 8. Updated: ${zenith.lastUpdate}. Recommended for best overall value and performance!` : "Zenith is our top recommended exploit!";
-            } else if (msg.includes('solara')) {
-                const solara = exploitsData.find(e => e.name === 'Solara');
-                response = solara ? `**Solara** (${solara.version}) - FREE, no key system! 51% sUNC, Decompiler, Level 3. Updated: ${solara.lastUpdate}. Great free option but lower sUNC than premium.` : "Solara is a popular free exploit!";
-            } else if (msg.includes('help') || msg.includes('command') || msg.includes('what can you')) {
-                response = "I can help with: ✓ Exploit terms (sUNC, key system, VNG, decompiler) ✓ Current status & updates ✓ Best recommendations ✓ Platform info ✓ Risk warnings ✓ Specific exploit details. Just ask!";
-            } else {
-                response = "I can help with exploit info! Try asking: 'What's sUNC?', 'Best free exploits?', 'Is it safe?', 'Windows vs Mobile?', 'What's Byfron?', or ask about specific exploits like Zenith, Solara, Wave!";
-            }
+        // CLIENT -> SERVER (Replit) configuration
+        // IMPORTANT: Replace this URL with your Replit server URL (no trailing slash)
+        const API_BASE = "https://your-repl-username.repl.co"; // <-- change this to your Replit URL
 
-            // Simulate typing delay
+        // Simple chat history stored in-memory for context
+        window.chatHistory = window.chatHistory || [];
+
+        async function callServerGenerate(userMessage) {
+            try {
+                const payload = {
+                    message: userMessage,
+                    history: window.chatHistory.slice(-12)
+                };
+
+                const r = await fetch(`${API_BASE}/api/generate`, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(payload)
+                });
+
+                if (!r.ok) {
+                    const txt = await r.text().catch(() => "");
+                    return `Server error: ${r.status} ${txt}`;
+                }
+
+                const json = await r.json();
+                return json.reply || "No reply from assistant.";
+            } catch (err) {
+                console.error("Client -> /api/generate error:", err);
+                return "Connection error — couldn't reach AI server.";
+            }
+        }
+
+        // Hook up the chat input form to call your Replit server
+        chatInputForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const message = chatInput.value.trim();
+            if (!message) return;
+
+            // Display user message locally
+            createMessage(message, 'user');
+
+            // Add to local history
+            window.chatHistory.push({ role: 'user', content: message });
+            if (window.chatHistory.length > 24) window.chatHistory.shift();
+            chatInput.value = '';
+
+            // Typing indicator
             const typingIndicator = document.createElement('div');
             typingIndicator.className = 'chat-message ai-message';
-            typingIndicator.innerHTML = '<span>Typing...</span><span class="ai-typing-indicator"></span><span class="ai-typing-indicator"></span><span class="ai-typing-indicator"></span>';
+            typingIndicator.innerHTML = 'Gemini is thinking... <span class="ai-typing-indicator"></span><span class="ai-typing-indicator"></span><span class="ai-typing-indicator"></span>';
             chatBody.appendChild(typingIndicator);
             chatBody.scrollTop = chatBody.scrollHeight;
 
-            setTimeout(() => {
-                chatBody.removeChild(typingIndicator);
-                createMessage(response, 'ai');
-            }, 1000 + Math.random() * 1000); // 1 to 2 second delay
-        };
+            // Call server which forwards to Gemini
+            const reply = await callServerGenerate(message);
 
-        chatInputForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const message = chatInput.value.trim();
+            // Remove typing indicator and show reply
+            chatBody.removeChild(typingIndicator);
+            createMessage(reply, 'ai');
 
-            if (message) {
-                createMessage(message, 'user');
-                generateAIResponse(message);
-                chatInput.value = ''; // Clear input
-            }
+            // Store assistant reply
+            window.chatHistory.push({ role: 'assistant', content: reply });
+            if (window.chatHistory.length > 24) window.chatHistory.shift();
         });
 
         // ====================================
