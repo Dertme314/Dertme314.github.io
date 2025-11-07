@@ -21,9 +21,9 @@
         .header-bg { background-color: #171717; }
         .sidebar-bg { background-color: #111111; }
         .card-bg { background-color: #1a1a1a; }
-        .text-cyan { color: #00ffff; }
-        .text-green-light { color: #39ff14; }
-        .border-green-light { border-color: #39ff14; }
+        .text-cyan { color: #0891b2; }
+        .text-green-light { color: #10b981; }
+        .border-green-light { border-color: #10b981; }
         .focus-ring-cyan {
             --tw-ring-color: rgba(0, 255, 255, 0.5);
         }
@@ -54,7 +54,7 @@
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
             transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
             transform: translateX(120%); opacity: 0;
-            background-color: #00ffff; color: #171717;
+            background-color: #0891b2; color: #171717;
         }
         #placeholder-message.show { transform: translateX(0); opacity: 1; }
 
@@ -65,10 +65,10 @@
             100% { transform: translateY(-500px) scale(1.2); opacity: 0; }
         }
         .shape {
-            position: absolute; font-size: 1rem; color: #00ffff;
+            position: absolute; font-size: 1rem; color: #0891b2;
             animation: float-up 10s infinite ease-out;
             pointer-events: none; z-index: 0;
-            text-shadow: 0 0 10px #00ffff, 0 0 5px rgba(0, 255, 255, 0.5);
+            text-shadow: 0 0 10px #0891b2, 0 0 5px rgba(0, 255, 255, 0.5);
             font-weight: 900;
         }
         .shape:nth-child(1) { left: 10%; top: 50%; animation-delay: 0s; animation-duration: 8s; font-size: 1.2rem; }
@@ -79,7 +79,7 @@
 
         /* --- Custom Scrollbar (existing) --- */
         .custom-scrollbar::-webkit-scrollbar { width: 8px; }
-        .custom-scrollbar::-webkit-scrollbar-thumb { background-color: #00ffff; border-radius: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background-color: #0891b2; border-radius: 4px; }
         .custom-scrollbar::-webkit-scrollbar-track { background-color: #171717; }
         
         /* --- Sidebar & Filter Toggling (existing) --- */
@@ -100,8 +100,8 @@
 
         /* --- Filter Checkbox Style (existing) --- */
         .peer:checked + .filter-span {
-            background-color: #00ffff; color: #171717; font-weight: 700;
-            border-color: #00ffff; box-shadow: 0 0 8px rgba(0, 255, 255, 0.4);
+            background-color: #0891b2; color: #171717; font-weight: 700;
+            border-color: #0891b2; box-shadow: 0 0 8px rgba(0, 255, 255, 0.4);
         }
         
         /* ==================================== */
@@ -123,7 +123,7 @@
             max-width: 380px;
             height: 500px;
             background-color: #1a1a1a; /* card-bg */
-            border: 1px solid #00ffff;
+            border: 1px solid #0891b2;
             border-radius: 12px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), 0 0 20px rgba(0, 255, 255, 0.5);
             display: flex;
@@ -156,7 +156,7 @@
 
         .user-message {
             margin-left: auto;
-            background-color: #00ffff;
+            background-color: #0891b2;
             color: #171717;
             padding: 8px 12px;
             border-radius: 10px 10px 0 10px;
@@ -171,7 +171,7 @@
             padding: 10px 12px;
             border-radius: 10px 10px 10px 0;
             align-self: flex-start;
-            border-left: 3px solid #00ffff;
+            border-left: 3px solid #0891b2;
         }
 
         .ai-typing-indicator {
@@ -180,7 +180,7 @@
             height: 8px;
             margin: 0 2px;
             border-radius: 50%;
-            background-color: #00ffff;
+            background-color: #0891b2;
             animation: typing-dot 1s infinite;
         }
 
