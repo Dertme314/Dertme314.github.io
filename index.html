@@ -9,28 +9,79 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         /* --- Custom styles for a polished Dark Theme --- */
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #0d0d0d;
-            background-image: radial-gradient(circle at 20% 20%, rgba(0, 255, 255, 0.08), transparent 30%),
-                             radial-gradient(circle at 80% 90%, rgba(57, 255, 20, 0.06), transparent 25%);
-            overflow-x: hidden;
-        }
+body {
+  font-family: 'Inter', sans-serif;
+  background: #0d0d0d;
+  color: #f3f3f3;
+  overflow-x: hidden;
+  transition: all 0.3s ease;
+}
 
-        /* --- Theme Colors & Glows --- */
-        .header-bg { background-color: #171717; }
-        .sidebar-bg { background-color: #111111; }
-        .card-bg { background-color: #1a1a1a; }
-        .text-cyan { color: #0891b2; }
-        .text-green-light { color: #10b981; }
-        .border-green-light { border-color: #10b981; }
-        .focus-ring-cyan {
-            --tw-ring-color: rgba(0, 255, 255, 0.5);
-        }
-        .exploit-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
-        }
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', 'Inter', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+p, span, li {
+  font-weight: 400;
+  color: #c4c4c4;
+}
+
+
+
+/* === REFINED THEME STYLES === */
+:root {
+  --bg-header: #171717;
+  --bg-sidebar: #111;
+  --bg-card: #1a1a1a;
+  --accent-cyan: #00ffff;
+  --accent-green: #39ff14;
+  --border-color: rgba(255, 255, 255, 0.1);
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  --radius: 10px;
+  --transition: all 0.3s ease;
+}
+
+.header-bg { background: var(--bg-header); }
+.sidebar-bg { background: var(--bg-sidebar); }
+.card-bg {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+
+.text-cyan { color: var(--accent-cyan); }
+.text-green-light { color: var(--accent-green); }
+.border-green-light { border-color: var(--accent-green); }
+
+.focus-ring-cyan:focus {
+  outline: 2px solid rgba(0, 255, 255, 0.5);
+  outline-offset: 2px;
+}
+
+.exploit-card {
+  transition: all 0.3s ease;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border-color);
+  padding: 1.25rem;
+}
+
+.exploit-card {
+  transition: all 0.3s ease;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+.exploit-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+}
+
+
 
         /* --- Modal Styling (existing) --- */
         #info-modal {
@@ -54,32 +105,17 @@
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
             transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
             transform: translateX(120%); opacity: 0;
-            background-color: #0891b2; color: #171717;
+            background-color: #00ffff; color: #171717;
         }
         #placeholder-message.show { transform: translateX(0); opacity: 1; }
 
-        /* --- Floating Shapes Animation (existing) --- */
-        @keyframes float-up {
-            0% { transform: translateY(0) scale(0.8); opacity: 0.5; }
-            50% { opacity: 0.9; }
-            100% { transform: translateY(-500px) scale(1.2); opacity: 0; }
-        }
-        .shape {
-            position: absolute; font-size: 1rem; color: #0891b2;
-            animation: float-up 10s infinite ease-out;
-            pointer-events: none; z-index: 0;
-            text-shadow: 0 0 10px #0891b2, 0 0 5px rgba(0, 255, 255, 0.5);
-            font-weight: 900;
-        }
-        .shape:nth-child(1) { left: 10%; top: 50%; animation-delay: 0s; animation-duration: 8s; font-size: 1.2rem; }
-        .shape:nth-child(2) { left: 30%; top: 80%; animation-delay: 2s; animation-duration: 12s; }
-        .shape:nth-child(3) { left: 50%; top: 30%; animation-delay: 5s; animation-duration: 9s; font-size: 0.8rem; }
-        .shape:nth-child(4) { left: 70%; top: 60%; animation-delay: 8s; animation-duration: 10s; }
-        .shape:nth-child(5) { left: 90%; top: 10%; animation-delay: 1s; animation-duration: 14s; font-size: 1.5rem; }
+/* Removed old floating shapes for cleaner UI */
+.shape { display: none; }
+
 
         /* --- Custom Scrollbar (existing) --- */
         .custom-scrollbar::-webkit-scrollbar { width: 8px; }
-        .custom-scrollbar::-webkit-scrollbar-thumb { background-color: #0891b2; border-radius: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background-color: #00ffff; border-radius: 4px; }
         .custom-scrollbar::-webkit-scrollbar-track { background-color: #171717; }
         
         /* --- Sidebar & Filter Toggling (existing) --- */
@@ -100,8 +136,10 @@
 
         /* --- Filter Checkbox Style (existing) --- */
         .peer:checked + .filter-span {
-            background-color: #0891b2; color: #171717; font-weight: 700;
-            border-color: #0891b2; box-shadow: 0 0 8px rgba(0, 255, 255, 0.4);
+            background-color: #00ffff; color: #171717; font-weight: 700;
+            border-color: #00ffff; border: 1px solid rgba(0, 255, 255, 0.4);
+            box-shadow: none;
+
         }
         
         /* ==================================== */
@@ -123,9 +161,10 @@
             max-width: 380px;
             height: 500px;
             background-color: #1a1a1a; /* card-bg */
-            border: 1px solid #0891b2;
+            border: 1px solid #00ffff;
             border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), 0 0 20px rgba(0, 255, 255, 0.5);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             display: flex;
             flex-direction: column;
             overflow: hidden;
@@ -156,7 +195,7 @@
 
         .user-message {
             margin-left: auto;
-            background-color: #0891b2;
+            background-color: #00ffff;
             color: #171717;
             padding: 8px 12px;
             border-radius: 10px 10px 0 10px;
@@ -171,7 +210,7 @@
             padding: 10px 12px;
             border-radius: 10px 10px 10px 0;
             align-self: flex-start;
-            border-left: 3px solid #0891b2;
+            border-left: 3px solid #00ffff;
         }
 
         .ai-typing-indicator {
@@ -180,7 +219,7 @@
             height: 8px;
             margin: 0 2px;
             border-radius: 50%;
-            background-color: #0891b2;
+            background-color: #00ffff;
             animation: typing-dot 1s infinite;
         }
 
@@ -750,7 +789,7 @@
                     
                     <div class="flex justify-between items-center py-2 border-y border-gray-800/50">
                         <div class="flex items-center text-sm font-medium ${isUpdated ? 'text-green-light' : 'text-red-500'}">
-                            <span class="w-3 h-3 rounded-full mr-2 ${isUpdated ? 'bg-green-light shadow-[0_0_8px_rgba(57,255,20,0.5)]' : 'bg-red-500 shadow-[0_0_8px_rgba(239,68,68,0.5)]'}"></span>
+                            <span class="w-3 h-3 rounded-full mr-2 ${isUpdated ? 'bg-green-light shadow-none' : 'bg-red-500 shadow-[0_0_8px_rgba(239,68,68,0.5)]'}"></span>
                             ${isUpdated ? 'Updated' : 'Not Updated'}
                         </div>
                         <p class="text-xs text-gray-500">Last: ${exploit.lastUpdate.split(' at ')[0]}</p>
