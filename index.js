@@ -1,13 +1,3 @@
-// FIX: Add global declarations for functions attached to the window object to resolve TypeScript errors.
-declare global {
-    interface Window {
-        showPlaceholderMessage: (message: string) => void;
-        openInfoModal: (exploitName: string) => void;
-        closeInfoModal: (event?: MouseEvent) => void;
-        toggleAIChat: () => void;
-    }
-}
-
 import { GoogleGenAI } from "@google/genai";
 
 const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
@@ -18,8 +8,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const exploitSections = document.getElementById('exploit-sections');
     const exploitCountSpan = document.getElementById('exploit-count');
     const totalExploitCountSpan = document.getElementById('total-exploit-count');
-    // FIX: Cast searchInput to HTMLInputElement to access the 'value' property.
-    const searchInput = document.getElementById('search-input') as HTMLInputElement;
+    const searchInput = document.getElementById('search-input');
     const categoryFiltersContainer = document.getElementById('category-filters');
     const statusFiltersContainer = document.getElementById('status-filters');
     const resetFiltersBtn = document.getElementById('reset-filters-btn');
@@ -38,18 +27,15 @@ document.addEventListener('DOMContentLoaded', async () => {
     const modalCategory = document.getElementById('modal-category');
     const modalLastUpdate = document.getElementById('modal-last-update');
     const modalKeysystem = document.getElementById('modal-keysystem');
-    // FIX: Cast modalWebsiteLink to HTMLAnchorElement to access the 'href' property.
-    const modalWebsiteLink = document.getElementById('modal-website-link') as HTMLAnchorElement;
+    const modalWebsiteLink = document.getElementById('modal-website-link');
 
     // AI Chat References
     const aiChatWindow = document.getElementById('ai-chat-window');
     const aiChatButton = document.getElementById('ai-chat-button');
     const chatBody = document.getElementById('chat-body');
-    // FIX: Cast chatInput to HTMLInputElement to access 'value' and 'disabled' properties.
-    const chatInput = document.getElementById('chat-input') as HTMLInputElement;
+    const chatInput = document.getElementById('chat-input');
     const chatInputForm = document.getElementById('chat-input-form');
-    // FIX: Cast chatSubmitButton to HTMLButtonElement to access the 'disabled' property.
-    const chatSubmitButton = chatInputForm.querySelector('button') as HTMLButtonElement;
+    const chatSubmitButton = chatInputForm.querySelector('button');
 
     // Stats & Features References
     const statTotal = document.getElementById('stat-total');
@@ -57,8 +43,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const statPaid = document.getElementById('stat-paid');
     const statUpdated = document.getElementById('stat-updated');
     const recentExploitsList = document.getElementById('recent-exploits-list');
-    // FIX: Cast sortSelect to HTMLSelectElement to access the 'value' property.
-    const sortSelect = document.getElementById('sort-select') as HTMLSelectElement;
+    const sortSelect = document.getElementById('sort-select');
 
 
     // --- Placeholder Alert Function ---
@@ -228,8 +213,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     window.closeInfoModal = (event) => {
         // Check if the click occurred on the backdrop (the modal element itself) or the close button
-        // FIX: Cast event.target to HTMLElement to access the 'closest' method.
-        if (!event || event.target === infoModal || (event.target as HTMLElement).closest('button[onclick="closeInfoModal()"]')) {
+        if (!event || event.target === infoModal || event.target.closest('button[onclick="closeInfoModal()"]')) {
             infoModal.classList.add('hidden');
             infoModal.classList.remove('flex');
             document.body.style.overflow = 'auto'; // Restore scrolling
@@ -412,12 +396,10 @@ document.addEventListener('DOMContentLoaded', async () => {
         const searchTerm = searchInput.value.toLowerCase();
 
         // Get all active category filters
-        // FIX: Cast element to HTMLInputElement to access dataset property.
-        const activeCategories = [...categoryFiltersContainer.querySelectorAll('input:checked')].map(el => (el as HTMLInputElement).dataset.category);
+        const activeCategories = [...categoryFiltersContainer.querySelectorAll('input:checked')].map(el => el.dataset.category);
 
         // Get all active status/price filters
-        // FIX: Cast element to HTMLInputElement to access dataset property.
-        const activeStatuses = [...statusFiltersContainer.querySelectorAll('input:checked')].map(el => (el as HTMLInputElement).dataset.filter);
+        const activeStatuses = [...statusFiltersContainer.querySelectorAll('input:checked')].map(el => el.dataset.filter);
 
         let filteredExploits = exploitsData.filter(exploit => {
             // 1. Search Filter
@@ -488,13 +470,10 @@ document.addEventListener('DOMContentLoaded', async () => {
         resetFiltersBtn.addEventListener('click', () => {
             searchInput.value = '';
             sortSelect.value = 'default';
-            // FIX: Cast input to HTMLInputElement to access the 'checked' property.
-            allFilters.forEach(input => (input as HTMLInputElement).checked = false);
+            allFilters.forEach(input => input.checked = false);
             // Re-check the necessary defaults
-            // FIX: Cast element to HTMLInputElement to access the 'checked' property.
-            (document.querySelector('#status-filters input[data-filter="Updated"]') as HTMLInputElement).checked = true;
-            // FIX: Cast input to HTMLInputElement to access the 'checked' property.
-            document.querySelectorAll('#category-filters input').forEach(input => (input as HTMLInputElement).checked = true);
+            document.querySelector('#status-filters input[data-filter="Updated"]').checked = true;
+            document.querySelectorAll('#category-filters input').forEach(input => input.checked = true);
             renderExploits();
             window.showPlaceholderMessage('Filters have been reset.');
         });
