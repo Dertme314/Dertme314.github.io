@@ -149,7 +149,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     window.openInfoModal = (exploitName) => {
         const exploit = exploitsData.find(e => e.name === exploitName);
         if (!exploit) {
-            window.showPlaceholderMessage(`Error: Exploit ${exploitName} not found.`, 'Error');
+            // FIX: Removed the extra 'Error' argument from showPlaceholderMessage call for consistency and correctness, as the function derives the message type from the message string itself.
+            window.showPlaceholderMessage(`Error: Exploit ${exploitName} not found.`);
             return;
         }
 
