@@ -7,240 +7,279 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        /* --- Custom styles for a polished Dark Theme --- */
+<style>
+/* --- Modern Professional Dark Theme (Zinc & Blue) --- */
 body {
-  font-family: 'Inter', sans-serif;
-  background: #0d0d0d;
-  color: #f3f3f3;
-  overflow-x: hidden;
-  transition: all 0.3s ease;
+    font-family: 'Inter', sans-serif;
+    background-color: #09090b; /* Zinc-950: Rich, deep black/gray */
+    color: #e4e4e7;            /* Zinc-200: Soft white for better readability */
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+/* Typography Defaults */
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Poppins', 'Inter', sans-serif;
-  font-weight: 700;
-  letter-spacing: 0.08em;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.025em; /* Tighter tracking for a modern look */
+    color: #ffffff;
 }
 
 p, span, li {
-  font-weight: 400;
-  color: #c4c4c4;
+    font-weight: 400;
+    color: #a1a1aa; /* Zinc-400: Professional muted text */
 }
 
-
-
-/* === REFINED THEME STYLES === */
+/* === THEME VARIABLES === */
 :root {
-  --bg-header: #171717;
-  --bg-sidebar: #111;
-  --bg-card: #1a1a1a;
-  --accent-cyan: #00ffff;
-  --accent-green: #39ff14;
-  --border-color: rgba(255, 255, 255, 0.1);
-  --shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  --radius: 10px;
-  --transition: all 0.3s ease;
+    /* Backgrounds */
+    --bg-header: rgba(9, 9, 11, 0.8); /* Semi-transparent */
+    --bg-sidebar: #18181b; /* Zinc-900 */
+    --bg-card: #18181b;    /* Zinc-900 */
+    --bg-input: #27272a;   /* Zinc-800 */
+
+    /* Accents (Replacing Neon Cyan/Green) */
+    --accent-primary: #3b82f6; /* Blue-500: Trustworthy, clean blue */
+    --accent-hover: #2563eb;   /* Blue-600 */
+    --accent-success: #10b981; /* Emerald-500 */
+    --accent-warning: #f59e0b; /* Amber-500 */
+    --accent-danger: #ef4444;  /* Red-500 */
+
+    /* Borders & Shadows */
+    --border-color: #27272a;   /* Zinc-800: Subtle separation */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    
+    --radius: 8px; /* Slightly tighter radius */
+    --transition: all 0.2s ease-in-out;
 }
 
-.header-bg { background: var(--bg-header); }
-.sidebar-bg { background: var(--bg-sidebar); }
+/* === LAYOUT UTILITIES === */
+.header-bg { 
+    background: var(--bg-header);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.sidebar-bg { 
+    background: var(--bg-sidebar);
+    border-right: 1px solid var(--border-color);
+}
+
+/* Card Styling - Flat, Clean, No Glow */
 .card-bg {
-  background: var(--bg-card);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  transition: var(--transition);
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
 }
 
-.text-cyan { color: var(--accent-cyan); }
-.text-green-light { color: var(--accent-green); }
-.border-green-light { border-color: var(--accent-green); }
-
-.focus-ring-cyan:focus {
-  outline: 2px solid rgba(0, 255, 255, 0.5);
-  outline-offset: 2px;
+/* Input Fields */
+input, select, textarea {
+    background-color: var(--bg-input) !important;
+    border: 1px solid var(--border-color) !important;
+    color: white !important;
+    transition: var(--transition);
 }
 
+/* Focus States - Clean Ring */
+input:focus, select:focus, button:focus, .focus-ring-cyan:focus {
+    outline: none;
+    border-color: var(--accent-primary) !important;
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.25) !important; /* Soft blue ring */
+}
+
+/* === TEXT UTILITIES REPLACEMENTS === */
+/* Mapping old neon classes to new theme colors */
+.text-cyan { color: #ffffff !important; } /* Headers become white */
+.text-blue-accent { color: var(--accent-primary); } /* Use this for links/active states */
+.text-green-light { color: var(--accent-success); }
+.border-green-light { border-color: var(--accent-success); }
+
+/* === EXPLOIT CARD === */
 .exploit-card {
-  transition: all 0.3s ease;
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  border: 1px solid var(--border-color);
-  padding: 1.25rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-.exploit-card {
-  transition: all 0.3s ease;
-  border-radius: 10px;
-  border: 1px solid rgba(255,255,255,0.08);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-}
 .exploit-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+    transform: translateY(-2px);
+    border-color: var(--accent-primary); /* Only border changes color */
+    box-shadow: var(--shadow-lg); /* Soft shadow lift, no neon glow */
 }
 
+/* === MODAL STYLING === */
+#info-modal {
+    background-color: rgba(0, 0, 0, 0.6); /* Dimmed background */
+    backdrop-filter: blur(4px);
+    transition: opacity 0.3s ease-in-out;
+    z-index: 1000;
+}
 
+.modal-content {
+    background: #18181b;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    max-height: 90vh;
+    animation: fadeInScale 0.2s ease-out;
+}
 
-        /* --- Modal Styling (existing) --- */
-        #info-modal {
-            background-color: rgba(0, 0, 0, 0.75);
-            backdrop-filter: blur(5px);
-            transition: opacity 0.3s ease-in-out;
-            z-index: 1000;
-        }
-        .modal-content {
-            max-height: 90vh;
-            animation: fadeInScale 0.3s ease-out;
-        }
-        @keyframes fadeInScale {
-            from { opacity: 0; transform: scale(0.95); }
-            to { opacity: 1; transform: scale(1); }
-        }
-        /* --- Placeholder Message Box (existing) --- */
-        #placeholder-message {
-            position: fixed; top: 20px; right: 20px; z-index: 2000;
-            padding: 0.75rem 1.25rem; border-radius: 0.5rem;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
-            transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
-            transform: translateX(120%); opacity: 0;
-            background-color: #00ffff; color: #171717;
-        }
-        #placeholder-message.show { transform: translateX(0); opacity: 1; }
+@keyframes fadeInScale {
+    from { opacity: 0; transform: scale(0.98); }
+    to { opacity: 1; transform: scale(1); }
+}
 
-/* Removed old floating shapes for cleaner UI */
+/* === PLACEHOLDER MESSAGE TOAST === */
+#placeholder-message {
+    position: fixed; top: 24px; right: 24px; z-index: 2000;
+    padding: 0.75rem 1.25rem; border-radius: var(--radius);
+    box-shadow: var(--shadow-lg);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+    transform: translateX(120%); opacity: 0;
+    background-color: #ffffff; /* White toast */
+    color: #09090b; /* Black text */
+    border-left: 4px solid var(--accent-primary);
+    font-weight: 600;
+}
+#placeholder-message.show { transform: translateX(0); opacity: 1; }
+
+/* Remove old floating shapes */
 .shape { display: none; }
 
+/* === SCROLLBAR === */
+.custom-scrollbar::-webkit-scrollbar { width: 6px; }
+.custom-scrollbar::-webkit-scrollbar-thumb { background-color: #3f3f46; border-radius: 3px; }
+.custom-scrollbar::-webkit-scrollbar-track { background-color: transparent; }
 
-        /* --- Custom Scrollbar (existing) --- */
-        .custom-scrollbar::-webkit-scrollbar { width: 8px; }
-        .custom-scrollbar::-webkit-scrollbar-thumb { background-color: #00ffff; border-radius: 4px; }
-        .custom-scrollbar::-webkit-scrollbar-track { background-color: #171717; }
-        
-        /* --- Sidebar & Filter Toggling (existing) --- */
-        #filters-sidebar { transition: transform 0.3s ease-in-out; }
-        @media (max-width: 767px) {
-            #filters-sidebar {
-                position: fixed; top: 0; left: 0; height: 100%; z-index: 60;
-                transform: translateX(-100%);
-            }
-            #filters-sidebar.open { transform: translateX(0); }
-            #sidebar-overlay {
-                position: fixed; inset: 0; background-color: rgba(0,0,0,0.5);
-                z-index: 59; transition: opacity 0.3s;
-            }
-        }
-        .filter-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-        @media (min-width: 768px) { .filter-grid { grid-template-columns: repeat(1, minmax(0, 1fr)); } }
+/* === SIDEBAR & FILTERS === */
+#filters-sidebar { transition: transform 0.3s ease-in-out; }
+@media (max-width: 767px) {
+    #filters-sidebar {
+        position: fixed; top: 0; left: 0; height: 100%; z-index: 60;
+        background: var(--bg-sidebar);
+        transform: translateX(-100%);
+    }
+    #filters-sidebar.open { transform: translateX(0); }
+    #sidebar-overlay {
+        position: fixed; inset: 0; background-color: rgba(0,0,0,0.5);
+        z-index: 59; transition: opacity 0.3s;
+    }
+}
 
-        /* --- Filter Checkbox Style (existing) --- */
-        .peer:checked + .filter-span {
-            background-color: #00ffff; color: #171717; font-weight: 700;
-            border-color: #00ffff; border: 1px solid rgba(0, 255, 255, 0.4);
-            box-shadow: none;
+.filter-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media (min-width: 768px) { .filter-grid { grid-template-columns: repeat(1, minmax(0, 1fr)); } }
 
-        }
-        
-        /* ==================================== */
-        /* === NEW AI CHAT WIDGET STYLES === */
-        /* ==================================== */
-        #ai-chat-button {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            z-index: 90; /* Below modals but above content */
-            transition: all 0.3s;
-        }
-        
-        #ai-chat-window {
-            position: fixed;
-            bottom: 90px;
-            right: 20px;
-            width: 90vw;
-            max-width: 380px;
-            height: 500px;
-            background-color: #1a1a1a; /* card-bg */
-            border: 1px solid #00ffff;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            display: flex;
-            flex-direction: column;
-            overflow: hidden;
-            z-index: 95;
-            transform: scale(0.8) translateY(20px);
-            opacity: 0;
-            pointer-events: none;
-            transition: all 0.3s ease-out;
-        }
+/* Filter Checkbox - Modern Pill Style */
+.peer:checked + .filter-span {
+    background-color: var(--accent-primary);
+    color: white;
+    font-weight: 600;
+    border-color: var(--accent-primary);
+    box-shadow: var(--shadow-sm);
+}
+.filter-span {
+    transition: all 0.2s;
+}
+.filter-span:hover {
+    border-color: #52525b; /* Zinc-600 */
+}
 
-        #ai-chat-window.open {
-            transform: scale(1) translateY(0);
-            opacity: 1;
-            pointer-events: auto;
-        }
-        
-        #chat-body {
-            flex-grow: 1;
-            padding: 1rem;
-            overflow-y: auto;
-            background-color: #111111; /* sidebar-bg */
-        }
+/* === AI CHAT WIDGET === */
+#ai-chat-button {
+    position: fixed; bottom: 24px; right: 24px; z-index: 90;
+    background-color: var(--accent-primary);
+    color: white;
+    border-radius: 9999px;
+    box-shadow: var(--shadow-lg);
+    transition: transform 0.2s, background-color 0.2s;
+    /* Removed hover glow */
+}
+#ai-chat-button:hover {
+    background-color: var(--accent-hover);
+    transform: scale(1.05);
+}
 
-        .chat-message {
-            margin-bottom: 10px;
-            max-width: 85%;
-        }
+#ai-chat-window {
+    position: fixed; bottom: 96px; right: 24px;
+    width: 90vw; max-width: 380px; height: 500px;
+    background-color: #18181b;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.5);
+    display: flex; flex-direction: column;
+    overflow: hidden; z-index: 95;
+    transform: scale(0.95) translateY(10px); opacity: 0;
+    pointer-events: none;
+    transition: all 0.2s ease-out;
+}
 
-        .user-message {
-            margin-left: auto;
-            background-color: #00ffff;
-            color: #171717;
-            padding: 8px 12px;
-            border-radius: 10px 10px 0 10px;
-            align-self: flex-end;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-        }
-        
-        .ai-message {
-            margin-right: auto;
-            background-color: #2b2b2b;
-            color: #ffffff;
-            padding: 10px 12px;
-            border-radius: 10px 10px 10px 0;
-            align-self: flex-start;
-            border-left: 3px solid #00ffff;
-        }
+#ai-chat-window.open {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+}
 
-        .ai-typing-indicator {
-            display: inline-block;
-            width: 8px;
-            height: 8px;
-            margin: 0 2px;
-            border-radius: 50%;
-            background-color: #00ffff;
-            animation: typing-dot 1s infinite;
-        }
+#chat-body {
+    flex-grow: 1; padding: 1rem;
+    overflow-y: auto;
+    background-color: #09090b; /* Inner chat darker */
+}
 
-        .ai-typing-indicator:nth-child(2) {
-            animation-delay: 0.2s;
-        }
+.chat-message {
+    margin-bottom: 12px;
+    max-width: 85%;
+    line-height: 1.5;
+    font-size: 0.95rem;
+}
 
-        .ai-typing-indicator:nth-child(3) {
-            animation-delay: 0.4s;
-        }
-        
-        @keyframes typing-dot {
-            0%, 60%, 100% {
-                transform: translateY(0);
-            }
-            30% {
-                transform: translateY(-5px);
-            }
-        }
+.user-message {
+    margin-left: auto;
+    background-color: var(--accent-primary);
+    color: white;
+    padding: 10px 14px;
+    border-radius: 12px 12px 0 12px;
+    align-self: flex-end;
+    box-shadow: var(--shadow-sm);
+}
 
-    </style>
+.ai-message {
+    margin-right: auto;
+    background-color: #27272a; /* Zinc-800 */
+    color: #f4f4f5;
+    padding: 12px 14px;
+    border-radius: 12px 12px 12px 0;
+    align-self: flex-start;
+    border-left: 3px solid var(--accent-primary);
+}
+
+/* Chat Input Area */
+#chat-input-form {
+    background-color: #18181b;
+    border-top: 1px solid var(--border-color);
+}
+
+/* Typing Animation */
+.ai-typing-indicator {
+    display: inline-block; width: 6px; height: 6px;
+    margin: 0 2px; border-radius: 50%;
+    background-color: #a1a1aa;
+    animation: typing-dot 1.4s infinite ease-in-out both;
+}
+.ai-typing-indicator:nth-child(1) { animation-delay: -0.32s; }
+.ai-typing-indicator:nth-child(2) { animation-delay: -0.16s; }
+
+@keyframes typing-dot {
+    0%, 80%, 100% { transform: scale(0); }
+    40% { transform: scale(1); }
+}
+</style>
 </head>
 <body class="text-white min-h-screen relative">
 
