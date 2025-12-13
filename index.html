@@ -594,7 +594,7 @@ input:focus, select:focus, button:focus, .focus-ring-cyan:focus {
 
 const exploitsData = [
     // ----------------------------------------------------------------------
-    // --- Windows Script Executor Exploits (Updated with current status) ---
+    // --- Windows Script Executor Exploits ---------------------------------
     // ----------------------------------------------------------------------
     { 
         name: 'Wave', 
@@ -603,7 +603,7 @@ const exploitsData = [
         price: 'Paid ($7.49 Weekly)', 
         category: 'Windows Script Executor', 
         features: ['100% sUNC', 'Multi-Inject', 'Decompiler'], 
-        pros: ['100% sUNC', 'Multi-Inject Support', 'Built-in Decompiler', 'Level 8 Execution Environment'], 
+        pros: ['100% sUNC', 'Has a decompiler', 'Level 8 Execution Environment'], 
         neutralNotes: ['Downgrade Tutorial available'], 
         cons: ['$7.49 Weekly Subscription required'], 
         updated: false, 
@@ -648,7 +648,7 @@ const exploitsData = [
         price: 'Paid ($5.99 Weekly)', 
         category: 'Windows Script Executor', 
         features: ['94% sUNC', 'Decompiler'], 
-        pros: ['94% sUNC', 'Decompiler', 'Level 8 Execution Environment'], 
+        pros: ['94% sUNC', 'Has a decompiler', 'Level 8 Execution Environment'], 
         neutralNotes: [], 
         cons: ['$5.99 Weekly Subscription required'], 
         updated: true, 
@@ -670,6 +670,51 @@ const exploitsData = [
         keySystem: true, 
         lastUpdate: '11/29/2025 at 10:01 AM UTC', 
         website: 'bunni.lol' 
+    },
+    { 
+        name: 'ChocoSploit', 
+        version: '1.3.7', 
+        statusText: 'Private', 
+        price: 'Paid ($10 Monthly)', 
+        category: 'Windows Script Executor', 
+        features: ['sUNC'], 
+        pros: ['Private Exploit'], 
+        neutralNotes: [], 
+        cons: ['$10 Monthly Subscription required'], 
+        updated: true, 
+        keySystem: false, 
+        lastUpdate: '12/11/2025 at 9:50 PM UTC', 
+        website: '' 
+    },
+    { 
+        name: 'Velocity', 
+        version: '0.5.7', 
+        statusText: 'Free', 
+        price: 'Free', 
+        category: 'Windows Script Executor', 
+        features: ['98% sUNC', 'Multi-Inject', 'Decompiler', 'No Keysystem'], 
+        pros: ['98% sUNC', 'Multi-Inject Support', 'Decompiler', 'Completely Free (No Keysystem)', 'Level 8 Execution Environment'], 
+        neutralNotes: [], 
+        cons: [], 
+        updated: false, 
+        keySystem: false, 
+        lastUpdate: '11/06/2025 at 6:30 AM UTC', 
+        website: 'https://www.getvelocity.live/' 
+    },
+    { 
+        name: 'Valex (Internal)', 
+        version: 'VLX-INT-v2.0.1', 
+        statusText: 'Key System', 
+        price: 'Free (Key System)', 
+        category: 'Windows Script Executor', 
+        features: ['sUNC'], 
+        pros: [], 
+        neutralNotes: ['Key System in use'], 
+        cons: [], 
+        updated: false, 
+        keySystem: true, 
+        lastUpdate: '11/25/2025 at 4:06 PM UTC', 
+        website: '' 
     },
     { 
         name: 'Solara', 
@@ -702,21 +747,6 @@ const exploitsData = [
         website: 'xeno.onl' 
     },
     { 
-        name: 'Velocity', 
-        version: '0.5.7', 
-        statusText: 'Free', 
-        price: 'Free', 
-        category: 'Windows Script Executor', 
-        features: ['98% sUNC', 'Multi-Inject', 'Decompiler', 'No Keysystem'], 
-        pros: ['98% sUNC', 'Multi-Inject Support', 'Decompiler', 'Completely Free (No Keysystem)', 'Level 8 Execution Environment'], 
-        neutralNotes: [], 
-        cons: [], 
-        updated: false, 
-        keySystem: false, 
-        lastUpdate: '11/06/2025 at 6:30 AM UTC', 
-        website: 'https://www.getvelocity.live/' 
-    },
-    { 
         name: 'SirHurt', 
         version: 'V5.405', 
         statusText: 'Long-Running', 
@@ -730,36 +760,6 @@ const exploitsData = [
         keySystem: false, 
         lastUpdate: '12/04/2025 at 1:04 AM UTC', 
         website: 'sirhurt.net' 
-    },
-    { 
-        name: 'ChocoSploit', 
-        version: '1.3.7', 
-        statusText: 'Private', 
-        price: 'Paid ($10 Monthly)', 
-        category: 'Windows Script Executor', 
-        features: ['sUNC'], 
-        pros: ['Private Exploit'], 
-        neutralNotes: [], 
-        cons: ['$10 Monthly Subscription required'], 
-        updated: true, 
-        keySystem: false, 
-        lastUpdate: '12/11/2025 at 9:50 PM UTC', 
-        website: '' 
-    },
-    { 
-        name: 'Valex', 
-        version: 'VLX-INT-v2.0.1', 
-        statusText: 'Key System', 
-        price: 'Free (Key System)', 
-        category: 'Windows Script Executor', 
-        features: ['sUNC'], 
-        pros: [], 
-        neutralNotes: ['Key System in use'], 
-        cons: [], 
-        updated: false, 
-        keySystem: true, 
-        lastUpdate: '11/25/2025 at 4:06 PM UTC', 
-        website: '' 
     },
     { 
         name: 'Lovreware', 
@@ -776,14 +776,70 @@ const exploitsData = [
         lastUpdate: '12/05/2025 at 5:50 PM UTC', 
         website: '' 
     },
-    // --- Retained from previous list (No new data provided in text) ---
-    { name: 'Zenith', version: '2.0.27', statusText: 'Recommended', price: 'Paid ($6.49 Weekly)', category: 'Windows Script Executor', features: ['100% sUNC', 'Multi-Inject', 'Decompiler'], pros: ['100% sUNC (High performance)', 'Multi-Inject Support', 'Built-in Decompiler', 'Level 8 Execution Environment'], neutralNotes: [], cons: ['$6.49 Weekly Subscription required'], updated: true, keySystem: false, lastUpdate: '11/07/2025 at 7:03 PM UTC', website: 'zenith.win' },
-    { name: 'VegaX', version: '8', statusText: 'Short Key Duration', price: 'Free', category: 'Windows Script Executor', features: ['2 day long keys'], pros: ['Keys last 2 days (less hassle)', 'Free', 'Level 8 Execution Environment'], neutralNotes: ['Uses core technology from ArceusX'], cons: ['Fails sUNC checks'], updated: true, keySystem: true, lastUpdate: '10/16/2025 at 7:18 PM UTC', website: 'vegax.gg' },
-    { name: 'CodeX', version: '8', statusText: 'Advanced Features', price: 'Paid', category: 'Windows Script Executor', features: ['Decompiler', 'VNG Support'], pros: ['Has a decompiler', 'VNG Support', 'Advanced features', 'Level 8 Execution Environment'], neutralNotes: ['Uses core technology from ArceusX'], cons: ['Fails sUNC checks'], updated: true, keySystem: true, lastUpdate: '10/16/2025 at 7:18 PM UTC', website: 'codex.lol' },
+    { 
+        name: 'Zenith', 
+        version: '2.0.27', 
+        statusText: 'Recommended', 
+        price: 'Paid ($6.49 Weekly)', 
+        category: 'Windows Script Executor', 
+        features: ['100% sUNC', 'Multi-Inject', 'Decompiler'], 
+        pros: ['100% sUNC (High performance)', 'Multi-Inject Support', 'Built-in Decompiler', 'Level 8 Execution Environment'], 
+        neutralNotes: [], 
+        cons: ['$6.49 Weekly Subscription required'], 
+        updated: true, 
+        keySystem: false, 
+        lastUpdate: '11/07/2025 at 7:03 PM UTC', 
+        website: 'zenith.win' 
+    },
+    { 
+        name: 'VegaX', 
+        version: '8', 
+        statusText: 'Short Key Duration', 
+        price: 'Free', 
+        category: 'Windows Script Executor', 
+        features: ['2 day long keys'], 
+        pros: ['Keys last 2 days (less hassle)', 'Free', 'Level 8 Execution Environment'], 
+        neutralNotes: ['Uses core technology from ArceusX'], 
+        cons: ['Fails sUNC checks'], 
+        updated: true, 
+        keySystem: true, 
+        lastUpdate: '10/16/2025 at 7:18 PM UTC', 
+        website: 'vegax.gg' 
+    },
+    { 
+        name: 'CodeX', 
+        version: '8', 
+        statusText: 'Advanced Features', 
+        price: 'Paid', 
+        category: 'Windows Script Executor', 
+        features: ['Decompiler', 'VNG Support'], 
+        pros: ['Has a decompiler', 'VNG Support', 'Advanced features', 'Level 8 Execution Environment'], 
+        neutralNotes: ['Uses core technology from ArceusX'], 
+        cons: ['Fails sUNC checks'], 
+        updated: true, 
+        keySystem: true, 
+        lastUpdate: '10/16/2025 at 7:18 PM UTC', 
+        website: 'codex.lol' 
+    },
 
     // ----------------------------------------------------------------------
-    // --- Windows External Exploits (New Section) --------------------------
+    // --- Windows External Exploits ----------------------------------------
     // ----------------------------------------------------------------------
+    { 
+        name: 'Ronin', 
+        version: '3.7.7', 
+        statusText: 'Optimization', 
+        price: 'Paid ($9.89 Lifetime)', 
+        category: 'Windows External Exploit', 
+        features: ['Usermode', 'Optimization'], 
+        pros: ['Amazing optimization', 'Usermode product', 'Rich in features'], 
+        neutralNotes: [], 
+        cons: ['$9.89 Lifetime license required'], 
+        updated: false, 
+        keySystem: false, 
+        lastUpdate: '12/11/2025 at 1:18 PM UTC', 
+        website: 'getronin.xyz' 
+    },
     { 
         name: 'Serotonin', 
         version: '6.7', 
@@ -800,19 +856,19 @@ const exploitsData = [
         website: 'serotonin.best' 
     },
     { 
-        name: 'Matcha', 
-        version: '1.8.6', 
-        statusText: 'Best Value', 
-        price: 'Paid ($9.99 Lifetime)', 
+        name: 'Melatonin', 
+        version: '1.4.4l', 
+        statusText: 'Private', 
+        price: 'Paid ($9.99 Monthly)', 
         category: 'Windows External Exploit', 
-        features: ['Decompiler', 'Code explorer', 'Hybrid (Kernel/Usermode)'], 
-        pros: ['Has a decompiler & code explorer', 'Hybrid - kernel, usermode', 'Rich in features'], 
+        features: [], 
+        pros: ['Private Exploit'], 
         neutralNotes: [], 
-        cons: ['$9.99 Lifetime license required'], 
-        updated: true, 
+        cons: ['$9.99 Monthly Subscription required'], 
+        updated: false, 
         keySystem: false, 
-        lastUpdate: '12/12/2025 at 2:34 AM UTC', 
-        website: 'matcha.pink' 
+        lastUpdate: '12/09/2025 at 12:05 AM UTC', 
+        website: '' 
     },
     { 
         name: 'Severe', 
@@ -830,19 +886,34 @@ const exploitsData = [
         website: 'discord.gg' 
     },
     { 
-        name: 'Ronin', 
-        version: '3.7.7', 
-        statusText: 'Optimization', 
-        price: 'Paid ($9.89 Lifetime)', 
+        name: 'Matcha', 
+        version: '1.8.6', 
+        statusText: 'Best Value', 
+        price: 'Paid ($9.99 Lifetime)', 
         category: 'Windows External Exploit', 
-        features: ['Usermode', 'Optimization'], 
-        pros: ['Amazing optimization', 'Usermode product', 'Rich in features'], 
+        features: ['Decompiler', 'Code explorer', 'Hybrid (Kernel/Usermode)'], 
+        pros: ['Has a decompiler & code explorer', 'Hybrid - kernel, usermode', 'Rich in features'], 
         neutralNotes: [], 
-        cons: ['$9.89 Lifetime license required'], 
+        cons: ['$9.99 Lifetime license required'], 
+        updated: true, 
+        keySystem: false, 
+        lastUpdate: '12/12/2025 at 2:34 AM UTC', 
+        website: 'matcha.pink' 
+    },
+    { 
+        name: 'Isabelle', 
+        version: '1.3.5', 
+        statusText: 'External', 
+        price: 'Paid ($9.99 Lifetime)', 
+        category: 'Windows External Exploit', 
+        features: [], 
+        pros: [], 
+        neutralNotes: [], 
+        cons: ['$9.99 Lifetime license required'], 
         updated: false, 
         keySystem: false, 
-        lastUpdate: '12/11/2025 at 1:18 PM UTC', 
-        website: 'getronin.xyz' 
+        lastUpdate: '12/03/2025 at 9:04 PM UTC', 
+        website: '' 
     },
     { 
         name: 'Matrix Hub', 
@@ -872,6 +943,21 @@ const exploitsData = [
         updated: true, 
         keySystem: false, 
         lastUpdate: '12/11/2025 at 9:26 PM UTC', 
+        website: '' 
+    },
+    { 
+        name: 'Valex (External)', 
+        version: 'BUILD_UPD_5.0', 
+        statusText: 'Key System', 
+        price: 'Key System', 
+        category: 'Windows External Exploit', 
+        features: [], 
+        pros: [], 
+        neutralNotes: [], 
+        cons: [], 
+        updated: true, 
+        keySystem: true, 
+        lastUpdate: '12/12/2025 at 3:28 PM UTC', 
         website: '' 
     },
     { 
@@ -905,21 +991,6 @@ const exploitsData = [
         website: 'yerba.wtf' 
     },
     { 
-        name: 'Melatonin', 
-        version: '1.4.4l', 
-        statusText: 'Private', 
-        price: 'Paid ($9.99 Monthly)', 
-        category: 'Windows External Exploit', 
-        features: [], 
-        pros: ['Private Exploit'], 
-        neutralNotes: [], 
-        cons: ['$9.99 Monthly Subscription required'], 
-        updated: false, 
-        keySystem: false, 
-        lastUpdate: '12/09/2025 at 12:05 AM UTC', 
-        website: '' 
-    },
-    { 
         name: 'Aimmy', 
         version: 'Latest', 
         statusText: 'AI-Based', 
@@ -933,6 +1004,138 @@ const exploitsData = [
         keySystem: false, 
         lastUpdate: 'Unknown', 
         website: 'aimmy.dev' 
+    },
+
+    // ----------------------------------------------------------------------
+    // --- Mac Script Executor Exploits -------------------------------------
+    // ----------------------------------------------------------------------
+    { 
+        name: 'Hydrogen', 
+        version: '702.0614', 
+        statusText: 'Free Mac Exploit', 
+        price: 'Free (Key System)', 
+        category: 'Mac Script Executor', 
+        features: ['96% sUNC', 'Decompiler'], 
+        pros: ['Has a decompiler', '96% sUNC', 'Level 8 Execution Environment'], 
+        neutralNotes: ['Key System in use'], 
+        cons: [], 
+        updated: false, 
+        keySystem: true, 
+        lastUpdate: '12/10/2025 at 5:55 AM UTC', 
+        website: 'hydrogen.lat' 
+    },
+    { 
+        name: 'Macsploit', 
+        version: '1.9.6x', 
+        statusText: 'Powerful Mac', 
+        price: 'Paid ($9.99 Lifetime)', 
+        category: 'Mac Script Executor', 
+        features: ['100% sUNC', 'Multi-Inject', 'Trial Version', 'Decompiler'], 
+        pros: ['Multi-Inject support', 'Has a Trial version', 'Has a decompiler', '100% sUNC', 'Level 8 Execution Environment'], 
+        neutralNotes: [], 
+        cons: ['$9.99 Lifetime license required'], 
+        updated: false, 
+        keySystem: false, 
+        lastUpdate: '12/09/2025 at 10:54 PM UTC', 
+        website: 'raptor.fun' 
+    },
+    { 
+        name: 'Cryptic (Mac)', 
+        version: 'Version-2.1.1', 
+        statusText: 'Mac Solution', 
+        price: 'Paid ($6.95 Monthly)', 
+        category: 'Mac Script Executor', 
+        features: ['sUNC', 'Decompiler'], 
+        pros: ['Has a decompiler', '94% sUNC', 'Level 8 Execution Environment'], 
+        neutralNotes: [], 
+        cons: ['$6.95 Monthly Subscription required'], 
+        updated: false, 
+        keySystem: false, 
+        lastUpdate: '11/27/2025 at 9:46 PM UTC', 
+        website: 'getcryptic.net' 
+    },
+
+    // ----------------------------------------------------------------------
+    // --- Android Script Executor Exploits ---------------------------------
+    // ----------------------------------------------------------------------
+    { 
+        name: 'Delta (Android)', 
+        version: '2.701.966', 
+        statusText: 'Multi-Platform', 
+        price: 'Free (Key System)', 
+        category: 'Android Script Executor', 
+        features: ['100% sUNC', 'Decompiler'], 
+        pros: ['Has a decompiler', '100% sUNC', 'Level 8 Execution Environment'], 
+        neutralNotes: ['Key System in use'], 
+        cons: [], 
+        updated: true, 
+        keySystem: true, 
+        lastUpdate: '12/11/2025 at 9:46 PM UTC', 
+        website: 'deltaexploits.gg' 
+    },
+    { 
+        name: 'Cryptic (Android)', 
+        version: 'Version-2.700.937', 
+        statusText: 'Free Android', 
+        price: 'Free', 
+        category: 'Android Script Executor', 
+        features: ['sUNC', 'Decompiler'], 
+        pros: ['Has a decompiler', '94% sUNC', 'Level 8 Execution Environment'], 
+        neutralNotes: [], 
+        cons: [], 
+        updated: true, 
+        keySystem: false, 
+        lastUpdate: '11/27/2025 at 7:30 PM UTC', 
+        website: 'getcryptic.net' 
+    },
+    { 
+        name: 'Codex (Android)', 
+        version: '2.700.937', 
+        statusText: 'Advanced Android', 
+        price: 'Free', 
+        category: 'Android Script Executor', 
+        features: ['sUNC'], 
+        pros: [], 
+        neutralNotes: [], 
+        cons: [], 
+        updated: true, 
+        keySystem: false, 
+        lastUpdate: '11/26/2025 at 8:03 AM UTC', 
+        website: '' 
+    },
+    { 
+        name: 'ArceusX', 
+        version: 'Latest', 
+        statusText: 'Mobile', 
+        price: 'Free (Key System)', 
+        category: 'Android Script Executor', 
+        features: ['VNG Support'], 
+        pros: ['VNG Support', 'Level 8 Execution Environment'], 
+        neutralNotes: ['Fails sUNC checks'], 
+        cons: [], 
+        updated: true, 
+        keySystem: true, 
+        lastUpdate: 'Unknown', 
+        website: 'spdmteam.com' 
+    },
+
+    // ----------------------------------------------------------------------
+    // --- iOS Script Executor Exploits -------------------------------------
+    // ----------------------------------------------------------------------
+    { 
+        name: 'Delta (iOS)', 
+        version: '2.701.966', 
+        statusText: 'iOS Solution', 
+        price: 'Free (Key System)', 
+        category: 'iOS Script Executor', 
+        features: ['sUNC'], 
+        pros: [], 
+        neutralNotes: ['Key System in use'], 
+        cons: [], 
+        updated: true, 
+        keySystem: true, 
+        lastUpdate: '12/12/2025 at 8:01 AM UTC', 
+        website: 'deltaexploits.gg' 
     }
 ];
 
